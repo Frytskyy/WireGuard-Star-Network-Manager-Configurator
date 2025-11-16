@@ -1274,7 +1274,7 @@ PersistentKeepalive = 25"""
 
 [Interface]
 # Server IP address in VPN network
-Address = {server['ip']}/32
+Address = {server['ip']}/24
 
 # Rules for routing and NAT (CHECK external_interface!)
 PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -A FORWARD -o %i -j ACCEPT; iptables -t nat -A POSTROUTING -o {server['external_interface']} -j MASQUERADE; echo 1 > /proc/sys/net/ipv4/ip_forward
@@ -2632,4 +2632,5 @@ if __name__ == "__main__":
 # "The Force will be with you... always." - Obi-Wan Kenobi
 # (And hopefully good network connectivity will be too!)
 #
+
 # 73, VE3WHM (yes, I'm also a ham radio operator - another geeky hobby!) 📻
